@@ -1,0 +1,40 @@
+Embedding backend   : gemini-embedding-001
+Chiến lược chunking : HeadingChunker
+Số tài liệu nguồn   : 6
+Số chunk đã nạp     : 32
+==============================================================================
+
+[Q1] Sinh viên cần làm gì để được cấp quyền sử dụng thư viện lần đầu?
+  filter={'audience': 'student'}  needs_filter=True
+  gold_answer: Hoàn thành 3 bước: (1) tham gia khóa học trực tuyến 'Tập huấn sử dụng thư viện TDTU' trên E-learning, (2) ký bản cam kết Tuân thủ quyền tác giả, (3) làm bài kiểm tra và đạt số điểm theo quy định.
+  [1] score=0.844 doc_id=tan-sinh-vien :: # Hướng dẫn sử dụng thư viện cho tân sinh viên
+  [2] score=0.837 doc_id=tan-sinh-vien :: ### Điều kiện được cấp quyền sử dụng thư viện Tân sinh viên phải hoàn thành **đủ 3 bước** sau: 1. Tham gia khóa học trực tuyến **"Tập huấn sử dụng thư
+  [3] score=0.827 doc_id=student-the-tai-khoan :: ### Lưu ý kích hoạt thẻ Trước khi kích hoạt thẻ, sinh viên phải hoàn thành tập huấn sử dụng Thư viện.
+
+[Q2] Mỗi lượt đặt phòng học nhóm được sử dụng tối đa bao nhiêu giờ?
+  filter={'audience': 'student'}  needs_filter=False
+  gold_answer: 02 giờ/lượt.
+  [1] score=0.861 doc_id=dat-phong :: ### Thời gian sử dụng - Phòng học nhóm / thuyết trình / xem phim / nghiên cứu cá nhân: **02 giờ/lượt** - Phòng studio, phòng hội thảo trực tuyến, khu 
+  [2] score=0.782 doc_id=dat-phong :: ### Gia hạn - Phòng học nhóm / thuyết trình / xem phim / nghiên cứu cá nhân: được gia hạn khi không có người chờ mượn - Khu vực học qua đêm: đăng ký t
+  [3] score=0.734 doc_id=dat-phong :: ### Số lượng người Số người sử dụng thực tế phải đảm bảo **ít nhất 50% sức chứa** và **không vượt quá sức chứa** của phòng. Thông tin sức chứa từng ph
+
+[Q3] Gia hạn tài liệu không thành công trong những trường hợp nào?
+  filter=None  needs_filter=False
+  gold_answer: Gia hạn không thành công khi tài liệu bị trễ hạn hoặc tài liệu đang có người chờ mượn.
+  [1] score=0.885 doc_id=gia-han-tai-lieu :: ### Trường hợp không gia hạn được Gia hạn không thành công khi: - Tài liệu bị **trễ hạn** - Tài liệu đang **có người chờ mượn**
+  [2] score=0.819 doc_id=gia-han-tai-lieu :: # Gia hạn tài liệu Gia hạn tài liệu là quyền tăng thêm thời gian giữ tài liệu đang mượn. Khi gia hạn thành công, số ngày tăng thêm tùy thuộc vào chính
+  [3] score=0.747 doc_id=dat-phong :: ### Gia hạn - Phòng học nhóm / thuyết trình / xem phim / nghiên cứu cá nhân: được gia hạn khi không có người chờ mượn - Khu vực học qua đêm: đăng ký t
+
+[Q4] Giảng viên chưa có tài khoản cổng thông tin thư viện liên hệ ở đâu?
+  filter={'audience': 'faculty'}  needs_filter=True
+  gold_answer: Liên hệ Thư viện Truyền cảm hứng, Tòa nhà G. Điện thoại: (028) 37 755 057. Email: thuvien@tdtu.edu.vn
+  [1] score=0.846 doc_id=teacher-the-tai-khoan :: ### Tài khoản Cổng thông tin thư viện Sử dụng cùng tài khoản với **Cổng thông tin giảng viên/viên chức** của Trường. **Trường hợp đã có tài khoản Cổng
+  [2] score=0.823 doc_id=teacher-the-tai-khoan :: ### Tài khoản Cổng thông tin thư viện Liên hệ: Phòng Tổ chức hành chính, Phòng A0009 - Tòa nhà A | ĐT: (028) 377 55 035 | Email: phongtchc@tdtu.edu.vn
+  [3] score=0.807 doc_id=teacher-the-tai-khoan :: ### Giảng viên, viên chức chưa có thẻ Liên hệ: **Thư viện Truyền cảm hứng, Tòa nhà G** - Điện thoại: (028) 37 755 057 - Email: thuvien@tdtu.edu.vn
+
+[Q5] Số người sử dụng phòng chức năng phải đảm bảo điều kiện gì về sức chứa?
+  filter=None  needs_filter=False
+  gold_answer: Số người thực tế phải đảm bảo ít nhất 50% sức chứa và không vượt quá sức chứa của phòng.
+  [1] score=0.834 doc_id=dat-phong :: ### Số lượng người Số người sử dụng thực tế phải đảm bảo **ít nhất 50% sức chứa** và **không vượt quá sức chứa** của phòng. Thông tin sức chứa từng ph
+  [2] score=0.730 doc_id=tan-sinh-vien :: ### Sử dụng phòng chức năng Đặt phòng trước trên website Thư viện, sau đó liên hệ nhân viên tại quầy để được mở cửa (nếu chưa có thẻ chip).
+  [3] score=0.682 doc_id=dat-phong :: ### Thời gian sử dụng - Phòng học nhóm / thuyết trình / xem phim / nghiên cứu cá nhân: **02 giờ/lượt** - Phòng studio, phòng hội thảo trực tuyến, khu 
