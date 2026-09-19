@@ -20,7 +20,6 @@ commonErrors: ["Crawl trang mà robots.txt cấm vì chỉ nhìn 'trang mở cô
 requiresSubmission: true
 description: "Học viên hoàn thiện TODO trong src/ (chunking, vector store, RAG agent), crawl corpus dịch vụ/chính sách thực tế đúng chuẩn provenance, rồi so sánh chiến lược retrieval bằng 5 benchmark query."
 ---
-
 > **4 giờ, 5 giai đoạn.** Mốc thời gian bên dưới tính **tương đối từ lúc lớp bắt đầu** (0:00), không phải giờ tuyệt đối — lớp bắt đầu lúc nào thì cộng dồn từ đó. Lab đan xen phần **cá nhân** (60 điểm — bạn tự code) và phần **nhóm** (40 điểm — mỗi người thử một chiến lược khác nhau trên cùng dữ liệu).
 >
 > 42 bài test chạy bằng embedding giả lập nên **không cần API key** để pass phần code. Phần dữ liệu thì cần Internet.
@@ -29,25 +28,26 @@ description: "Học viên hoàn thiện TODO trong src/ (chunking, vector store,
 
 ### Lộ trình
 
-| Giai đoạn | Thời gian | Nội dung | Checkpoint |
-| --- | --- | --- | --- |
-| **1. Dữ liệu** 🟦 | 0:00–1:00 | Setup, chọn chủ đề, crawl corpus | **CP1** 0:20 · **CP2** 1:00 |
-| **2. Code cá nhân** 🟩 | 1:00–2:30 | Warm-up + hoàn thiện `src/` | **CP3** 1:45 · **CP4** 2:30 |
-| **3. Chiến lược** | 2:30–3:00 | 5 benchmark query + chiến lược riêng | **CP5** 3:00 |
-| **4. So sánh** 🟦 | 3:00–3:25 | Chạy benchmark, so sánh, phân tích lỗi | **CP6** 3:25 |
-| **5. Demo & nộp** 🟦 | 3:25–4:00 | Thuyết trình, hoàn thiện báo cáo, push | **CP7** 4:00 |
 
+| Giai đoạn              | Thời gian | Nội dung                                    | Checkpoint                   |
+| -------------------------- | ------------ | ---------------------------------------------- | ------------------------------ |
+| **1. Dữ liệu** 🟦      | 0:00–1:00 | Setup, chọn chủ đề, crawl corpus         | **CP1** 0:20 · **CP2** 1:00 |
+| **2. Code cá nhân** 🟩 | 1:00–2:30 | Warm-up + hoàn thiện`src/`                 | **CP3** 1:45 · **CP4** 2:30 |
+| **3. Chiến lược**     | 2:30–3:00 | 5 benchmark query + chiến lược riêng     | **CP5** 3:00                 |
+| **4. So sánh** 🟦       | 3:00–3:25 | Chạy benchmark, so sánh, phân tích lỗi  | **CP6** 3:25                 |
+| **5. Demo & nộp** 🟦    | 3:25–4:00 | Thuyết trình, hoàn thiện báo cáo, push | **CP7** 4:00                 |
 
 ### Deliverable
 
-| # | Nộp gì | Ai | Điểm |
-| --- | --- | --- | --- |
-| 1 | `src/` hoàn thiện, `pytest tests/ -v` → 42 passed | Mỗi người | 30 |
-| 2 | `data/<chu-de>/` — 5–10 tài liệu `.md` + `sources.csv` | Nhóm | 10 |
-| 3 | `bench.py` + `ket_qua_benchmark.txt` | Mỗi người | nền cho #4, #5 |
-| 4 | `report/REPORT_CANHAN.md` | Mỗi người | 60 (gồm #1) |
-| 5 | `report/REPORT_NHOM.md` | Nhóm | 40 (gồm #2) |
-| 6 | Repo GitHub `K4-DAY07-HoVaTen-MSSV` + link vlearn | Mỗi người | điều kiện chấm |
+
+| # | Nộp gì                                                   | Ai           | Điểm             |
+| --- | ------------------------------------------------------------ | -------------- | -------------------- |
+| 1 | `src/` hoàn thiện, `pytest tests/ -v` → 42 passed       | Mỗi người | 30                 |
+| 2 | `data/<chu-de>/` — 5–10 tài liệu `.md` + `sources.csv` | Nhóm        | 10                 |
+| 3 | `bench.py` + `ket_qua_benchmark.txt`                       | Mỗi người | nền cho#4, #5     |
+| 4 | `report/REPORT_CANHAN.md`                                  | Mỗi người | 60 (gồm#1)        |
+| 5 | `report/REPORT_NHOM.md`                                    | Nhóm        | 40 (gồm#2)        |
+| 6 | Repo GitHub`K4-DAY07-HoVaTen-MSSV` + link vlearn           | Mỗi người | điều kiện chấm |
 
 `REPORT_CANHAN.md` hỏi bạn code thế nào và kết quả riêng của bạn ra sao — mỗi người một bản. `REPORT_NHOM.md` hỏi nhóm chọn tài liệu gì, ai thử chiến lược nào, chiến lược nào thắng — cả nhóm chung một bản. Điền dần theo từng checkpoint, đừng dồn về cuối.
 
@@ -116,11 +116,12 @@ Chủ đề bắt buộc của lớp **L3A** là **dịch vụ hoặc quy địn
 
 Nhóm 3 người, mỗi người một vai. Vai là trách nhiệm điều phối cộng thêm — ai cũng vẫn tự code Giai đoạn 2 và tự chạy benchmark riêng.
 
-| Vai | Việc | Hạn |
-| --- | --- | --- |
-| **R1 · Data** | Chốt chủ đề, chia mỗi người 2–3 URL, kiểm metadata từng file, giữ `sources.csv` | CP2 |
-| **R2 · Benchmark** | Viết 5 query + gold answer, tự kiểm mỗi gold answer trích được từ tài liệu thật | CP5 |
-| **R3 · Strategy** | Bảo đảm không ai trùng chiến lược, nhận vai chunk theo heading, chạy baseline cho nhóm | CP5 |
+
+| Vai                 | Việc                                                                                             | Hạn |
+| --------------------- | --------------------------------------------------------------------------------------------------- | ------ |
+| **R1 · Data**      | Chốt chủ đề, chia mỗi người 2–3 URL, kiểm metadata từng file, giữ`sources.csv`         | CP2  |
+| **R2 · Benchmark** | Viết 5 query + gold answer, tự kiểm mỗi gold answer trích được từ tài liệu thật       | CP5  |
+| **R3 · Strategy**  | Bảo đảm không ai trùng chiến lược, nhận vai chunk theo heading, chạy baseline cho nhóm | CP5  |
 
 Nhóm 4 người: người thứ tư làm **Report & Demo Lead**, gom kết quả cả nhóm và dẫn phần thuyết trình.
 
@@ -434,33 +435,34 @@ K4-DAY07-NguyenVanAn-21001234/
 
 ### ✅ CHECKPOINT 7 — 4:00
 
-- [ ] `pytest tests/ -v` → 42 passed, không còn `raise NotImplementedError`
-- [ ] `data/<chu-de>/` có 5–10 tài liệu đủ metadata, `sources.csv` khớp 1-1
-- [ ] Có ít nhất 1 query dùng `metadata_filter={"audience": "student"}`
-- [ ] Ít nhất 1 thành viên chunk theo heading/section
-- [ ] Hai báo cáo điền đủ, output pytest là thật
-- [ ] `bench.py` + `ket_qua_benchmark.txt` đã commit
-- [ ] Repo đúng tên quy ước, không chứa `.venv/`/`.env`, đã nộp link vào vlearn
+- [X]  `pytest tests/ -v` → 42 passed, không còn `raise NotImplementedError`
+- [X]  `data/<chu-de>/` có 5–10 tài liệu đủ metadata, `sources.csv` khớp 1-1
+- [X]  Có ít nhất 1 query dùng `metadata_filter={"audience": "student"}`
+- [X]  Ít nhất 1 thành viên chunk theo heading/section
+- [X]  Hai báo cáo điền đủ, output pytest là thật
+- [X]  `bench.py` + `ket_qua_benchmark.txt` đã commit
+- [X]  Repo đúng tên quy ước, không chứa `.venv/`/`.env`, đã nộp link vào vlearn
 
 Chọn rating và dán link bài nộp bên dưới, rồi bấm **Xác nhận đã nộp bài**.
 
 ## 9. Phụ lục A — Lỗi thường gặp
 
-| Triệu chứng | Nguyên nhân | Cách sửa |
-| --- | --- | --- |
-| `ModuleNotFoundError: No module named 'src'` | Chạy python từ thư mục khác | `cd` về thư mục gốc repo |
-| Test store fail dù code trông đúng | `_use_chroma = True` nhưng nhánh Chroma chưa cài đặt | Set `False`, chỉ dùng in-memory |
-| `test_no_filter_returns_all_candidates` fail | `search` và `search_with_filter` dùng hai đường code khác nhau | Cho cả hai gọi chung `_search_records` |
-| `delete_document` luôn trả `False` | Record không có `metadata['doc_id']` | Set `doc_id` trong `_make_record` |
-| `test_empty_separators_falls_back_gracefully` fail | Thiếu base case cho `separators == []` | Thêm nhánh cắt cứng theo `chunk_size` |
-| `ZeroDivisionError` trong `compare` | Chia cho `count == 0` khi text rỗng | Chặn trước khi chia |
-| Chunk vụn 5–10 ký tự | `RecursiveChunker` thiếu bước gom | Nối các mảnh nhỏ liền kề tới sát `chunk_size` |
-| `KeyError` khi đọc kết quả comparator | Tên key gõ sai | So từng ký tự với docstring |
-| Crawler báo `disallowed by robots.txt` | Nguồn không cho truy cập tự động | Đổi nguồn — không phải lỗi cần vượt qua |
-| Crawler crash `LookupError: unknown encoding` | Server trả charset không hợp lệ | Bỏ URL đó khỏi CSV, xử lý riêng |
-| `search_with_filter` luôn trả rỗng | Metadata không được trải vào từng chunk | Gộp frontmatter vào metadata khi tạo `Document` |
-| Filter không đổi kết quả gì | Corpus chỉ có một giá trị `audience`, hoặc hai đáp án nằm chung một file | Tách file theo `audience` |
-| Score âm cho chunk đúng | Đang dùng `MockEmbedder` | Bật embedder thật (Phụ lục B) |
+
+| Triệu chứng                                      | Nguyên nhân                                                                      | Cách sửa                                           |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| `ModuleNotFoundError: No module named 'src'`       | Chạy python từ thư mục khác                                                   | `cd` về thư mục gốc repo                         |
+| Test store fail dù code trông đúng             | `_use_chroma = True` nhưng nhánh Chroma chưa cài đặt                         | Set`False`, chỉ dùng in-memory                     |
+| `test_no_filter_returns_all_candidates` fail       | `search` và `search_with_filter` dùng hai đường code khác nhau               | Cho cả hai gọi chung`_search_records`              |
+| `delete_document` luôn trả `False`               | Record không có`metadata['doc_id']`                                              | Set`doc_id` trong `_make_record`                     |
+| `test_empty_separators_falls_back_gracefully` fail | Thiếu base case cho`separators == []`                                             | Thêm nhánh cắt cứng theo`chunk_size`             |
+| `ZeroDivisionError` trong `compare`                | Chia cho`count == 0` khi text rỗng                                                | Chặn trước khi chia                               |
+| Chunk vụn 5–10 ký tự                           | `RecursiveChunker` thiếu bước gom                                               | Nối các mảnh nhỏ liền kề tới sát`chunk_size` |
+| `KeyError` khi đọc kết quả comparator          | Tên key gõ sai                                                                   | So từng ký tự với docstring                      |
+| Crawler báo`disallowed by robots.txt`             | Nguồn không cho truy cập tự động                                             | Đổi nguồn — không phải lỗi cần vượt qua    |
+| Crawler crash`LookupError: unknown encoding`       | Server trả charset không hợp lệ                                                | Bỏ URL đó khỏi CSV, xử lý riêng               |
+| `search_with_filter` luôn trả rỗng              | Metadata không được trải vào từng chunk                                     | Gộp frontmatter vào metadata khi tạo`Document`    |
+| Filter không đổi kết quả gì                  | Corpus chỉ có một giá trị`audience`, hoặc hai đáp án nằm chung một file | Tách file theo`audience`                            |
+| Score âm cho chunk đúng                         | Đang dùng`MockEmbedder`                                                          | Bật embedder thật (Phụ lục B)                    |
 
 ## 10. Phụ lục B — Bật embedder thật
 
